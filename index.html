@@ -40,7 +40,7 @@ form{display:flex;gap:12px}.combo{flex:1;position:relative;min-width:0}.field{di
 <section id="result" class="panel result" hidden><h2 tabindex="-1"></h2><div class="person"><strong></strong><span id="leaderStatus" class="role" hidden><svg><use href="#crown"/></svg>Топ басшысы</span></div><p id="leader"></p><h3>Топ мүшелері</h3><ul></ul><button type="button" id="back" class="main-btn">Артқа қайту</button></section></main><div id="particles" aria-hidden="true"></div>
 <script>
 'use strict';
-const groups=[['Ернұр','Арсен','Нұрдәулет','Ақниет','Байдәулет','Балнұр','Нұрсая','Кәусар'],['Нұрғасыр','Ермұхаммед','Бақдәулет','Нұрали','Сағжан','Нұрасыл','Марат','Жансая','Темірлан']];
+const groups=[['Ернұр','Арсен','Нұрдәулет','Ақниет','Байдәулет','Балнұр','Нұрсая','Кәусар'],['Нұрғасыр','Ермұхаммед','Бақдәулет','Нұрали','Сағжан','Нұрасыл','Марал','Жансая','Темірлан']];
 const all=groups.flat().sort((a,b)=>a.localeCompare(b,'kk')), find=s=>document.querySelector(s);
 const input=find('#name'),list=find('#names'),choose=find('#choose'),result=find('#result'),loading=find('#loading'),error=find('#err');
 let visible=[],active=-1;
