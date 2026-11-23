@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="kk" data-type="software">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f8fd"><meta name="description" content="2 желтоқсандағы ашық сабаққа қатысатын оқушылар өз тобын осы жерден таба алады.">
+<title>Ашық сабақ · Тобымды анықтау</title>
+<style>
+*{box-sizing:border-box}[hidden]{display:none!important}
+:root{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:#182341;background:#f7f8fc;font-synthesis:none}
+body{margin:0;min-height:100svh;background:radial-gradient(ellipse at 90% 30%,#e9e9ff88,transparent 45%),linear-gradient(150deg,#fafbff,#f4f6fc)}
+header,main,footer{width:min(100% - 48px,1040px);margin:auto}
+header{display:flex;align-items:center;justify-content:space-between;padding:26px 0;border-bottom:1px solid #dfe3ef}
+.brand,.date,.meta,.label,.badge{display:flex;align-items:center;gap:9px}.brand{font-weight:700;letter-spacing:-.04em;font-size:21px}.mark{display:grid;place-items:center;width:37px;height:37px;border-radius:12px;color:white;background:linear-gradient(140deg,#5368e9,#3648ac);box-shadow:inset 0 1px 2px #ffffff70}
+svg{display:inline-block;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.date,.meta{font-size:14px;color:#505c78}.date svg,.meta svg{width:17px}
+main{padding:clamp(24px,4vw,56px) 0 32px}.hero{position:relative;isolation:isolate;overflow:hidden;border-radius:30px;background:radial-gradient(ellipse at 80% 50%,#9495ff77,transparent 50%),linear-gradient(113deg,#172443,#2c3d81 52%,#6668bd);color:white;padding:clamp(32px,5.7vw,72px);min-height:310px;display:flex;align-items:center;box-shadow:0 15px 35px -25px #263787}
+.hero:before{content:"";position:absolute;z-index:-1;inset:0;background-image:linear-gradient(#dadbff14 1px,transparent 1px),linear-gradient(90deg,#dadbff14 1px,transparent 1px);background-size:36px 36px;mask-image:linear-gradient(90deg,transparent,#000)}
+h1{font-size:clamp(34px,4.65vw,66px);letter-spacing:-.055em;line-height:1.04;margin:0;position:relative;z-index:1}h1 span{display:block;color:#d9dfff}.hero p{margin:21px 0 0;color:#eaedff;max-width:39ch;line-height:1.55;font-size:16px}
+.art{position:absolute;pointer-events:none;right:3%;top:50%;width:34%;height:245px;transform:translateY(-50%);z-index:-1;animation:arrive 1s ease-out both}.tile{position:absolute;width:48%;height:76%;border-radius:19px;border:1px solid #ffffffac;box-shadow:inset 2px 2px 3px #ffffff90,inset -3px -4px 8px #10173932,0 18px 30px #12163840;display:grid;place-content:center;font-family:Georgia,serif;font-size:78px;color:#fff;text-shadow:0 3px 5px #26368244}
+.one{left:9%;top:4%;background:linear-gradient(145deg,#cdeeff,#779ff6 45%,#6381d5);transform:rotate(-16deg)}.two{left:44%;top:20%;background:linear-gradient(140deg,#e3daffdd,#a797efef 52%,#8876d6);transform:rotate(13deg)}.tile:after{content:"";position:absolute;inset:8px;border:1px solid #ffffff60;border-radius:13px}.spark{position:absolute;font:28px Georgia;color:#e2e4ff}.s1{right:3%;top:1%}.s2{left:0;bottom:3%;font-size:18px}
+.panel{margin-top:20px;padding:clamp(22px,4vw,44px);border:1px solid #fff;border-radius:24px;background:#fffffff0;box-shadow:0 10px 44px -24px #46558b52,0 0 0 1px #dfe3ef}.label{justify-content:space-between;margin-bottom:20px;font-weight:650;font-size:21px;letter-spacing:-.03em}.meta{font-weight:450;letter-spacing:0}
+form{display:flex;gap:12px}.combo{flex:1;position:relative;min-width:0}.field{display:flex;align-items:center;height:56px;gap:12px;padding:0 14px;background:#f7f8fc;border:1px solid #cdd3e2;border-radius:12px;color:#69748c}.field:focus-within{outline:3px solid #526ae333;border-color:#6476d4}input{font:inherit;font-size:16px;border:0;outline:0;background:transparent;min-width:0;width:100%;color:inherit}button{cursor:pointer;font:inherit}button:focus-visible{outline:3px solid #1686d3;outline-offset:3px}.main-btn{min-height:56px;padding:0 28px;border:0;border-radius:12px;background:linear-gradient(130deg,#455fc6,#524da9);color:white;font-weight:650;box-shadow:0 4px 12px #4a56bb32;transition:transform .18s,filter .18s}.main-btn:hover{filter:brightness(1.09);transform:translateY(-1px)}.main-btn:active{transform:scale(.98)}.toggle{border:0;background:transparent;height:44px;min-width:44px;color:inherit;font-size:19px}
+.list{position:absolute;z-index:3;top:calc(100% + 5px);width:100%;max-height:220px;overflow:auto;background:white;border:1px solid #ccd3e4;border-radius:12px;padding:5px;box-shadow:0 12px 25px #202e5829}.option,.empty{padding:13px;border-radius:8px}.option{cursor:pointer}.option:hover,.option.active{background:#e9edff}.error{color:#963442;margin:14px 0 0}.bottom{border-top:1px solid #e3e6ef;margin-top:24px;padding-top:17px;display:flex;gap:20px;color:#53607b;font-size:14px}.dot{width:9px;height:9px;border-radius:50%;background:#5381de}.purple{background:#9572d1}.badge{gap:7px}
+.result{--accent:#395caf;--pale:#eff5ff;--wash:#cadffd;background:linear-gradient(115deg,white,var(--pale) 70%,var(--wash))}.result.second{--accent:#7050ab;--pale:#f5efff;--wash:#e0cffb}h2{margin:0 0 12px;font-size:clamp(25px,3.4vw,42px);letter-spacing:-.045em}.result strong{color:var(--accent)}ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;padding:0;margin:10px 0 24px}li{background:#ffffffc9;padding:12px;border-radius:10px;border:1px solid #dbe0ed}.role{display:inline-flex;align-items:center;gap:5px;font-size:13px;color:var(--accent);font-weight:650}.role svg{width:15px}.person{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:22px}.loading{text-align:center}.orb{width:48px;height:48px;margin:0 auto 16px;border:3px solid #e4e8fb;border-top-color:#5564c4;border-right-color:#ad90dc;border-radius:50%;animation:spin .9s linear infinite}
+#particles{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:5}#particles i{position:absolute;top:-12px;width:7px;height:12px;animation:fall 2.1s ease-in both}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes arrive{from{opacity:.1;translate:8px 8px}}@keyframes fall{to{transform:translate(var(--drift),105vh) rotate(460deg)}}
+@media(max-width:720px){header,main{width:calc(100% - 32px)}header{padding:16px 0}.hero{padding:30px 24px;align-items:flex-end;min-height:355px}.art{width:190px;height:135px;top:17px;right:6%;transform:none}.tile{font-size:43px;border-radius:12px}.tile:after{inset:5px;border-radius:8px}.hero p{max-width:34ch;margin-top:12px}.label{font-size:19px}form{flex-direction:column}.main-btn{width:100%}h1{font-size:clamp(34px,8.6vw,50px)}.panel{margin-top:14px}.brand{font-size:18px}.date{font-size:13px}.bottom{margin-top:18px}.list{max-height:180px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}#particles{display:none}}
+</style>
+<svg aria-hidden="true" style="position:absolute;width:0;height:0"><defs>
+<symbol id="book" viewBox="0 0 24 24"><path d="M12 6C9 4 6 4 2 5v14c4-1 7-1 10 1 3-2 6-2 10-1V5c-4-1-7-1-10 1Zm0 0v14"/></symbol>
+<symbol id="calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 10h18"/></symbol>
+<symbol id="people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M2 20v-2a7 7 0 0 1 14 0v2m0-15a3 3 0 0 1 0 6m2 3q4 1 4 6"/></symbol>
+<symbol id="search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 6 6"/></symbol>
+<symbol id="crown" viewBox="0 0 24 24"><path d="m3 6 5 4 4-7 4 7 5-4-3 11H6Zm3 14h12"/></symbol></defs></svg>
+<header><div class="brand"><span class="mark"><svg><use href="#book"/></svg></span>Ашық сабақ</div><time class="date" datetime="2026-12-02"><svg><use href="#calendar"/></svg>02.12.2026</time></header>
+<main><section class="hero"><div><h1>Ашық сабаққа <span>қош келдіңіз!</span></h1><p>Есіміңізді таңдап, қай топта екеніңізді біліңіз.</p></div><div class="art" aria-hidden="true"><div class="tile one">І</div><div class="tile two">ІІ</div><b class="spark s1">✦</b><b class="spark s2">✦</b></div></section>
+<section class="panel" id="choose"><div class="label"><label for="name">Есіміңізді таңдаңыз</label><span class="meta"><svg><use href="#people"/></svg>17 оқушы</span></div>
+<form novalidate><div class="combo"><div class="field"><svg><use href="#search"/></svg><input id="name" placeholder="Есіміңізді іздеңіз" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="names" aria-autocomplete="list" aria-describedby="err"><button type="button" class="toggle" aria-label="Есімдер тізімі" aria-controls="names">⌄</button></div><div class="list" id="names" role="listbox" aria-label="Оқушылар" hidden></div></div><button class="main-btn">Тобымды анықтау</button></form><p id="err" class="error" role="alert" hidden>Тізімнен есіміңізді таңдаңыз.</p>
+<div class="bottom"><span class="badge"><i class="dot"></i>І топ · 8 оқушы</span><span class="badge"><i class="dot purple"></i>ІІ топ · 9 оқушы</span></div></section>
+<section id="loading" class="panel loading" role="status" hidden><div class="orb"></div>Тобыңыз анықталуда…</section>
+<section id="result" class="panel result" hidden><h2 tabindex="-1"></h2><div class="person"><strong></strong><span id="leaderStatus" class="role" hidden><svg><use href="#crown"/></svg>Топ басшысы</span></div><p id="leader"></p><h3>Топ мүшелері</h3><ul></ul><button type="button" id="back" class="main-btn">Артқа қайту</button></section></main><div id="particles" aria-hidden="true"></div>
+<script>
+'use strict';
+const groups=[['Ернұр','Арсен','Нұрдәулет','Ақниет','Байдәулет','Балнұр','Нұрсая','Кәусар'],['Нұрғасыр','Ермұхаммед','Бақдәулет','Нұрали','Сағжан','Нұрасыл','Марат','Жансая','Темірлан']];
+const all=groups.flat().sort((a,b)=>a.localeCompare(b,'kk')), find=s=>document.querySelector(s);
+const input=find('#name'),list=find('#names'),choose=find('#choose'),result=find('#result'),loading=find('#loading'),error=find('#err');
+let visible=[],active=-1;
+function closeList(){list.hidden=true;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');active=-1}
+function pick(name){input.value=name;error.hidden=true;input.focus();closeList()}
+function openList(showAll=false){
+ const query=showAll?'':input.value.trim().toLocaleLowerCase('kk');
+ visible=all.filter(n=>n.toLocaleLowerCase('kk').includes(query));active=-1;input.removeAttribute('aria-activedescendant');list.replaceChildren();
+ visible.forEach((name,i)=>{const item=document.createElement('div');item.className='option';item.id='option-'+i;item.setAttribute('role','option');item.textContent=name;item.onmousedown=e=>e.preventDefault();item.onclick=()=>pick(name);list.append(item)});
+ if(!visible.length){const empty=document.createElement('div');empty.className='empty';empty.textContent='Есім табылмады';list.append(empty)}
+ list.hidden=false;input.setAttribute('aria-expanded','true');
+}
+input.oninput=()=>{error.hidden=true;openList()};input.onclick=()=>openList(all.includes(input.value));
+find('.toggle').onclick=()=>{const wasOpen=!list.hidden;input.focus();if(wasOpen)closeList();else openList(true)};
+document.addEventListener('pointerdown',e=>{if(!e.target.closest('.combo'))closeList()});
+find('.combo').addEventListener('focusout',e=>{if(!e.currentTarget.contains(e.relatedTarget))closeList()});
+input.onkeydown=e=>{
+ if(e.key==='Escape'){closeList();return}
+ if(e.key==='Enter'&&!list.hidden&&active>=0){e.preventDefault();pick(visible[active]);return}
+ if(!['ArrowDown','ArrowUp'].includes(e.key))return;e.preventDefault();if(list.hidden)openList(true);if(!visible.length)return;
+ active=active<0?(e.key==='ArrowDown'?0:visible.length-1):(active+(e.key==='ArrowDown'?1:-1)+visible.length)%visible.length;
+ [...list.children].forEach((item,i)=>{item.classList.toggle('active',i===active);item.setAttribute('aria-selected',i===active)});const current=list.children[active];input.setAttribute('aria-activedescendant',current.id);current.scrollIntoView({block:'nearest'});
+};
+function celebrate(){if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;const layer=find('#particles');layer.replaceChildren();for(let i=0;i<48;i++){const bit=document.createElement('i');bit.style.left=Math.random()*100+'%';bit.style.background=['#6582ed','#ac91dc','#f4be6e','#87d5cb'][i%4];bit.style.animationDelay=Math.random()*.4+'s';bit.style.setProperty('--drift',(Math.random()-.5)*180+'px');layer.append(bit)}setTimeout(()=>layer.replaceChildren(),2600)}
+find('form').onsubmit=e=>{e.preventDefault();if(choose.hidden)return;const name=all.find(n=>n.toLowerCase()===input.value.trim().toLowerCase());if(!name){error.hidden=false;input.focus();openList();return}
+ closeList();choose.hidden=true;loading.hidden=false;
+ const group=groups.find(g=>g.includes(name)),second=group===groups[1];
+ setTimeout(()=>{result.classList.toggle('second',second);find('h2').textContent='Құттықтаймыз! Сіз '+(second?'ІІ':'І')+' топтасыз!';find('.person strong').textContent=name;find('#leaderStatus').hidden=name!==group[0];find('#leader').textContent='Топ басшысы — '+group[0];find('ul').replaceChildren(...group.map((n,i)=>{const item=document.createElement('li');item.textContent=n;if(!i){const badge=find('#leaderStatus').cloneNode(true);badge.removeAttribute('id');badge.hidden=false;item.append(document.createElement('br'),badge)}return item}));loading.hidden=true;result.hidden=false;find('h2').focus();celebrate()},2300)
+};
+find('#back').onclick=()=>{result.hidden=true;choose.hidden=false;input.value='';error.hidden=true;input.focus();closeList();find('#particles').replaceChildren()};
+</script></html>
